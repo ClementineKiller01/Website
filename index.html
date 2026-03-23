@@ -86,8 +86,8 @@
   .modal-pub-item a { font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; }
   .modal-pub-item a:hover { opacity: 0.7; }
 
-  .presentations { background: var(--white); }
-  .pres-card { margin-top: 48px; background: var(--gray-bg); border-radius: 20px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .presentations { background: var(--gray-bg); }
+  .pres-card { margin-top: 48px; background: var(--white); border-radius: 20px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
   .pres-info .pres-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
   .pres-info h3 { font-family: 'Newsreader', Georgia, serif; font-size: 24px; font-weight: 400; line-height: 1.35; letter-spacing: -0.015em; margin-bottom: 16px; }
   .pres-info p { font-size: 15px; color: var(--gray-mid); line-height: 1.7; margin-bottom: 20px; }
@@ -99,10 +99,10 @@
   .pres-preview-inner p { font-size: 11px; color: rgba(255,255,255,0.6); line-height: 1.5; }
   .pres-actions { margin-top: 20px; display: flex; gap: 12px; }
 
-  .teaching { background: var(--gray-bg); }
+  .teaching { background: var(--white); }
   .teaching-specialty { font-size: 15px; color: var(--gray-mid); margin-top: 12px; letter-spacing: 0.01em; }
   .teaching-grid { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .teaching-card { background: var(--white); border-radius: 20px; padding: 36px; }
+  .teaching-card { background: var(--gray-bg); border-radius: 20px; padding: 36px; }
   .teaching-card .card-role { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
   .teaching-card h3 { font-size: 19px; font-weight: 500; line-height: 1.4; margin-bottom: 12px; }
   .teaching-card p { font-size: 15px; color: var(--gray-mid); line-height: 1.65; }
@@ -166,8 +166,8 @@
     <ul class="nav-links" onclick="document.getElementById('nav').classList.remove('open')">
       <li><a href="#about">About</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#presentations">Presentations</a></li>
       <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#presentations">Presentations</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -191,7 +191,7 @@
     <div class="about-content">
       <div class="about-text">Bo Pang is a landscape architect, researcher, and educator whose work connects environmental science, spatial modeling, and design practice. Her research focuses on translating climate projections, hydrologic analysis, and ecological evidence into actionable landscape strategies for coastal adaptation, flood resilience, and water-centric landscapes. She is a Ph.D. candidate in Landscape Architecture at the University of Illinois Urbana–Champaign and will complete the degree in May 2026.</div>
       <div class="about-details">
-        <div class="detail-item"><div class="detail-label">Education</div><div class="detail-value">Ph.D., Landscape Architecture, UIUC (expected 2026)<br>M.L.A., UIUC, 2020<br>B.A., Film & Television Production, CUC, 2017</div></div>
+        <div class="detail-item"><div class="detail-label">Education</div><div class="detail-value">Ph.D., Landscape Architecture, University of Illinois Urbana–Champaign (expected 2026)<br>M.L.A., University of Illinois Urbana–Champaign, 2020<br>B.A., Film & Television Production, Communication University of China, 2017</div></div>
         <div class="detail-item"><div class="detail-label">Affiliations</div><div class="detail-value">LEAM Lab, Associate Director<br>ASLA · IGC · Sigma Lambda Alpha</div></div>
         <div class="detail-item"><div class="detail-label">Specialization</div><div class="detail-value">Geospatial Analysis · Geodesign · Coastal Resilience · Wetland Carbon Dynamics · Climate Adaptation</div></div>
       </div>
@@ -302,6 +302,26 @@
   </div>
 </div>
 
+<section class="teaching" id="teaching">
+  <div class="section-wide reveal">
+    <div class="section-label">Teaching</div>
+    <div class="section-title">Design education grounded in evidence.</div>
+    <div class="teaching-specialty">Geodesign Frameworks · Spatial Analysis · Urban Resilience · Landscape Interventions</div>
+    <div class="teaching-grid">
+      <div class="teaching-card">
+        <div class="card-role">Lead Instructor & TA · 2023–2024</div>
+        <h3>LA 437: Regional Design Studio</h3>
+        <p>Led and assisted a 5-credit senior studio of 17–18 students. Implemented the International Geodesign Collaboration framework, guiding students through iterative cycles of regional analysis, scenario evaluation, and site-specific resilience design for underserved Chicago neighborhoods. Supported evidence-based design connecting climate vulnerability assessments and stormwater modeling to environmental justice priorities.</p>
+      </div>
+      <div class="teaching-card">
+        <div class="card-role">Lab Instructor · 2023–2024</div>
+        <h3>ArcGIS Pro Lab Modules</h3>
+        <p>Developed and delivered GIS lab modules teaching spatial analysis techniques for regional-scale environmental assessment, including stormwater flow modeling, heat vulnerability mapping, and canopy coverage analysis. Equipped students with technical skills to support evidence-based decision-making in landscape planning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="presentations" id="presentations">
   <div class="section-wide reveal">
     <div class="section-label">Presentations</div>
@@ -322,26 +342,6 @@
           <h4>From Scenarios to Sections:<br>A Parameter Framework for Sea Level Rise–Responsive Design</h4>
           <p style="margin-top: 16px;">Bo Pang · Ph.D. Candidate<br>LEAM Lab · University of Illinois Urbana-Champaign</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="teaching" id="teaching">
-  <div class="section-wide reveal">
-    <div class="section-label">Teaching</div>
-    <div class="section-title">Design education grounded in evidence.</div>
-    <div class="teaching-specialty">Geodesign Frameworks · Spatial Analysis · Urban Resilience · Landscape Interventions</div>
-    <div class="teaching-grid">
-      <div class="teaching-card">
-        <div class="card-role">Lead Instructor & TA · 2023–2024</div>
-        <h3>LA 437: Regional Design Studio</h3>
-        <p>Led and assisted a 5-credit senior studio of 17–18 students. Implemented the International Geodesign Collaboration framework, guiding students through iterative cycles of regional analysis, scenario evaluation, and site-specific resilience design for underserved Chicago neighborhoods. Supported evidence-based design connecting climate vulnerability assessments and stormwater modeling to environmental justice priorities.</p>
-      </div>
-      <div class="teaching-card">
-        <div class="card-role">Lab Instructor · 2023–2024</div>
-        <h3>ArcGIS Pro Lab Modules</h3>
-        <p>Developed and delivered GIS lab modules teaching spatial analysis techniques for regional-scale environmental assessment, including stormwater flow modeling, heat vulnerability mapping, and canopy coverage analysis. Equipped students with technical skills to support evidence-based decision-making in landscape planning.</p>
       </div>
     </div>
   </div>
@@ -383,9 +383,9 @@
     <div class="section-title">Let's connect.</div>
     <div class="section-subtitle" style="margin: 16px auto 0;">For research, teaching, and collaboration inquiries, please get in touch.</div>
     <div class="contact-links">
-      <a href="/cdn-cgi/l/email-protection#d4b6a4e094bdb8b8bdbabbbda7fab1b0a1" class="contact-link">
+      <a href="mailto:bp4@illinois.edu" class="contact-link">
         <div class="icon-circle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
-        <span class="link-label"><span class="__cf_email__" data-cfemail="12706226527b7e7e7b7c7d7b613c777667">[email&#160;protected]</span></span>
+        <span class="link-label">bp4&#64;illinois.edu</span>
       </a>
       <a href="https://www.linkedin.com/in/bo-pang-2aa882184/" target="_blank" class="contact-link">
         <div class="icon-circle"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
@@ -401,12 +401,15 @@
 
 <footer><p>© 2026 Bo Pang · Built with purpose.</p></footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Add animation class via JS so content is visible without JS
-document.querySelectorAll('.reveal').forEach(el => el.classList.add('animated'));
-const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-setTimeout(() => { document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')); }, 1500);
-window.addEventListener('scroll', () => { document.getElementById('nav').style.background = window.scrollY > 50 ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0.82)'; });
+<script>
+document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('animated'); });
+var observer = new IntersectionObserver(function(entries) { entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+setTimeout(function() { document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); }); }, 1500);
+window.addEventListener('scroll', function() { document.getElementById('nav').style.background = window.scrollY > 50 ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0.82)'; });
 function openModal(id) { document.getElementById('modal-' + id).classList.add('active'); document.body.style.overflow = 'hidden'; }
-function closeModal() { 
+function closeModal() { document.querySelectorAll('.modal-overlay').forEach(function(m) { m.classList.remove('active'); }); document.body.style.overflow = ''; }
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
