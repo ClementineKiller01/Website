@@ -155,9 +155,30 @@
     .pres-card { grid-template-columns: 1fr; }
     .award-item { grid-template-columns: 1fr; gap: 4px; }
   }
+  .defense-banner {
+    background: linear-gradient(135deg, #1d1d1f 0%, #2d2d30 100%);
+    color: #fff; text-align: center; padding: 10px 32px;
+    font-size: 14px; font-weight: 500; letter-spacing: 0.02em;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  }
+  .defense-banner span { opacity: 0.6; }
+  nav { top: 38px; }
+  .hero { padding-top: 158px; }
+
+  .confetti-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; overflow: hidden; }
+  .confetti-piece { position: absolute; top: -20px; opacity: 0; animation: confettiFall linear forwards; }
+  @keyframes confettiFall {
+    0% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+    75% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(100vh) rotate(720deg) scale(0.5); }
+  }
+
 </style>
 </head>
 <body>
+
+<div class="defense-banner">🎓 Dissertation successfully defended <span>· March 31, 2026</span></div>
+<div class="confetti-container" id="confetti"></div>
 
 <nav id="nav">
   <div class="nav-inner">
@@ -189,9 +210,9 @@
     <div class="section-label">About</div>
     <div class="section-title">Bridging climate science<br>and design practice.</div>
     <div class="about-content">
-      <div class="about-text">Bo Pang is a landscape architect, researcher, and educator whose work connects environmental science, spatial modeling, and design practice. Her research focuses on translating climate projections, hydrologic analysis, and ecological evidence into actionable landscape strategies for coastal adaptation, flood resilience, and water-centric landscapes. She is a Ph.D. candidate in Landscape Architecture at the University of Illinois Urbana–Champaign and will complete the degree in May 2026.</div>
+      <div class="about-text">Bo Pang is a landscape architect, researcher, and educator whose work connects environmental science, spatial modeling, and design practice. Her research focuses on translating climate projections, hydrologic analysis, and ecological evidence into actionable landscape strategies for coastal adaptation, flood resilience, and water-centric landscapes. She successfully defended her dissertation in March 2026 and will receive her Ph.D. from the University of Illinois Urbana–Champaign in May 2026.</div>
       <div class="about-details">
-        <div class="detail-item"><div class="detail-label">Education</div><div class="detail-value">Ph.D., Landscape Architecture, University of Illinois Urbana–Champaign (expected 2026)<br>M.L.A., University of Illinois Urbana–Champaign, 2020<br>B.A., Film & Television Production, Communication University of China, 2017</div></div>
+        <div class="detail-item"><div class="detail-label">Education</div><div class="detail-value">Ph.D., Landscape Architecture, University of Illinois Urbana–Champaign, 2026 (defended)<br>M.L.A., University of Illinois Urbana–Champaign, 2020<br>B.A., Film & Television Production, Communication University of China, 2017</div></div>
         <div class="detail-item"><div class="detail-label">Affiliations</div><div class="detail-value">LEAM Lab, Associate Director<br>ASLA · IGC · Sigma Lambda Alpha</div></div>
         <div class="detail-item"><div class="detail-label">Specialization</div><div class="detail-value">Geospatial Analysis · Geodesign · Coastal Resilience · Wetland Carbon Dynamics · Climate Adaptation</div></div>
       </div>
@@ -383,7 +404,7 @@
     <div class="section-title">Let's connect.</div>
     <div class="section-subtitle" style="margin: 16px auto 0;">For research, teaching, and collaboration inquiries, please get in touch.</div>
     <div class="contact-links">
-      <a href="mailto:bp4@illinois.edu" class="contact-link">
+      <a href="mailto:bp4&#64;illinois.edu" class="contact-link">
         <div class="icon-circle"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
         <span class="link-label">bp4&#64;illinois.edu</span>
       </a>
@@ -402,6 +423,26 @@
 <footer><p>© 2026 Bo Pang · Built with purpose.</p></footer>
 
 <script>
+// Confetti
+(function() {
+  var container = document.getElementById('confetti');
+  var colors = ['#0071e3', '#ff9500', '#34c759', '#ff3b30', '#af52de', '#ffcc00', '#5ac8fa', '#ff6482'];
+  for (var i = 0; i < 80; i++) {
+    var piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    var size = Math.random() * 8 + 5;
+    piece.style.width = size + 'px';
+    piece.style.height = size * (Math.random() > 0.5 ? 2.5 : 1) + 'px';
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+    piece.style.animationDelay = (Math.random() * 1.5) + 's';
+    container.appendChild(piece);
+  }
+  setTimeout(function() { container.remove(); }, 5000);
+})();
+// Reveal
 document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('animated'); });
 var observer = new IntersectionObserver(function(entries) { entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
