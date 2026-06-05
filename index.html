@@ -155,30 +155,25 @@
     .pres-card { grid-template-columns: 1fr; }
     .award-item { grid-template-columns: 1fr; gap: 4px; }
   }
-  .defense-banner {
-    background: #E84A27;
-    color: #fff; text-align: center; padding: 10px 32px;
-    font-size: 14px; font-weight: 500; letter-spacing: 0.02em;
-    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  }
-  .defense-banner span { opacity: 0.6; }
-  nav { top: 38px; }
-  .hero { padding-top: 158px; }
 
-  .confetti-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; overflow: hidden; }
-  .confetti-piece { position: absolute; top: -20px; opacity: 0; animation: confettiFall linear forwards; }
-  @keyframes confettiFall {
-    0% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
-    75% { opacity: 1; }
-    100% { opacity: 0; transform: translateY(100vh) rotate(720deg) scale(0.5); }
+  .grad-strip {
+    padding: 0 32px 0; background: var(--white);
+    display: flex; justify-content: center; gap: 20px;
+    max-width: var(--wide-width); margin: 0 auto;
+    padding-top: 20px;
+  }
+  .grad-strip img {
+    width: 100%; max-width: 380px; height: 480px; object-fit: cover;
+    border-radius: 16px;
+  }
+  @media (max-width: 768px) {
+    .grad-strip { flex-direction: column; align-items: center; }
+    .grad-strip img { max-width: 100%; height: 360px; }
   }
 
 </style>
 </head>
 <body>
-
-<div class="defense-banner">🎓 Dissertation successfully defended <span>· March 31, 2026</span></div>
-<div class="confetti-container" id="confetti"></div>
 
 <nav id="nav">
   <div class="nav-inner">
@@ -205,14 +200,20 @@
   <div class="scroll-hint"><span></span></div>
 </section>
 
+<div class="grad-strip reveal">
+  <img src="hooding_hug.jpg" alt="Doctoral hooding ceremony, May 2026">
+  <img src="hooding_advisor.jpg" alt="Bo Pang with Professor Brian Deal">
+</div>
+<p style="text-align: center; font-size: 13px; color: var(--gray-light); margin-top: 12px; padding: 0 32px;">Doctoral hooding ceremony with advisor Professor Brian Deal · UIUC, May 2026</p>
+
 <section class="about" id="about">
   <div class="section-inner reveal">
     <div class="section-label">About</div>
     <div class="section-title">Bridging climate science<br>and design practice.</div>
     <div class="about-content">
-      <div class="about-text">Bo Pang is a landscape architect, researcher, and educator whose work connects environmental science, spatial modeling, and design practice. Her research focuses on translating climate projections, hydrologic analysis, and ecological evidence into actionable landscape strategies for coastal adaptation, flood resilience, and water-centric landscapes. She successfully defended her dissertation in March 2026 and will receive her Ph.D. from the University of Illinois Urbana–Champaign in May 2026.</div>
+      <div class="about-text">Bo Pang is a landscape designer, researcher, and educator whose work connects environmental science, spatial modeling, and design practice. Her research focuses on translating climate projections, hydrologic analysis, and ecological evidence into actionable landscape strategies for coastal adaptation, flood resilience, and water-centric landscapes. She received her Ph.D. in Landscape Architecture from the University of Illinois Urbana–Champaign in 2026.</div>
       <div class="about-details">
-        <div class="detail-item"><div class="detail-label">Education</div><div class="detail-value">Ph.D., Landscape Architecture, University of Illinois Urbana–Champaign, 2026 (defended)<br>M.L.A., University of Illinois Urbana–Champaign, 2020<br>B.A., Film & Television Production, Communication University of China, 2017</div></div>
+        <div class="detail-item"><div class="detail-label">Education</div><div class="detail-value">Ph.D., Landscape Architecture, University of Illinois Urbana–Champaign, 2026<br>M.L.A., University of Illinois Urbana–Champaign, 2020<br>B.A., Film & Television Production, Communication University of China, 2017</div></div>
         <div class="detail-item"><div class="detail-label">Affiliations</div><div class="detail-value">LEAM Lab, Associate Director<br>ASLA · IGC · Sigma Lambda Alpha</div></div>
         <div class="detail-item"><div class="detail-label">Specialization</div><div class="detail-value">Geospatial Analysis · Geodesign · Coastal Resilience · Wetland Carbon Dynamics · Climate Adaptation</div></div>
       </div>
@@ -361,7 +362,22 @@
         <div class="pres-preview-badge">CELA 2026</div>
         <div class="pres-preview-inner">
           <h4>From Scenarios to Sections:<br>A Parameter Framework for Sea Level Rise–Responsive Design</h4>
-          <p style="margin-top: 16px;">Bo Pang · Ph.D. Candidate<br>LEAM Lab · University of Illinois Urbana-Champaign</p>
+          <p style="margin-top: 16px;">Bo Pang · Ph.D.<br>LEAM Lab · University of Illinois Urbana-Champaign</p>
+        </div>
+      </div>
+    </div>
+    <div class="pres-card" style="margin-top: 24px;">
+      <div class="pres-info">
+        <div class="pres-tag">Paper Presentation · ACSP 2026</div>
+        <h3>Differentiating Coastal Growth Space Through Planning-Support Adaptation Zoning for Dalian, China</h3>
+        <p>Presents a planning-support framework for differentiating coastal growth space using adaptation zoning, integrating land-use modeling with climate vulnerability analysis in Dalian, China.</p>
+        <div class="pres-meta">ACSP 66th Annual Conference · Pittsburgh, PA · 2026</div>
+      </div>
+      <div class="pres-preview">
+        <div class="pres-preview-badge">ACSP 2026</div>
+        <div class="pres-preview-inner">
+          <h4>Differentiating Coastal Growth Space Through Planning-Support Adaptation Zoning</h4>
+          <p style="margin-top: 16px;">Bo Pang · Ph.D.<br>University of Illinois Urbana-Champaign</p>
         </div>
       </div>
     </div>
@@ -423,25 +439,6 @@
 <footer><p>© 2026 Bo Pang · Built with purpose.</p></footer>
 
 <script>
-// Confetti
-(function() {
-  var container = document.getElementById('confetti');
-  var colors = ['#0071e3', '#ff9500', '#34c759', '#ff3b30', '#af52de', '#ffcc00', '#5ac8fa', '#ff6482'];
-  for (var i = 0; i < 80; i++) {
-    var piece = document.createElement('div');
-    piece.className = 'confetti-piece';
-    var size = Math.random() * 8 + 5;
-    piece.style.width = size + 'px';
-    piece.style.height = size * (Math.random() > 0.5 ? 2.5 : 1) + 'px';
-    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-    piece.style.left = Math.random() * 100 + '%';
-    piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
-    piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
-    piece.style.animationDelay = (Math.random() * 1.5) + 's';
-    container.appendChild(piece);
-  }
-  setTimeout(function() { container.remove(); }, 5000);
-})();
 // Reveal
 document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('animated'); });
 var observer = new IntersectionObserver(function(entries) { entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
